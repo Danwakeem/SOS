@@ -5,8 +5,8 @@ This is an iPhone app that allows a user to save a location they might want to r
 It should be easy to build but we will see. This it toally a work in progress so if you want to fork this project be prepaired it will be super ugly until I get all of the parts I want working working.
 
 ## Featured to be added.
-** Navigation
-*  Drawing a route to your car.
+*  Navigation
+**  Drawing a route to your car.
 ** Today Extension
 *  I think it will just be two buttons one that says find your car or save car location and another that says add location.
 ** Icon
