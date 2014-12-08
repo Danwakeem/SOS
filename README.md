@@ -6,14 +6,14 @@ It should be easy to build but we will see. This it toally a work in progress so
 
 ## Featured to be added.
 * Navigation
-*  Drawing a route to your car.
+  - Drawing a route to your car.
 * Today Extension
-*  I think it will just be two buttons one that says find your car or save car location and another that says add location.
+  - I think it will just be two buttons one that says find your car or save car location and another that says add location.
 * Icon
-*  I already know what I want I am just being lazy and haven't made it yet.
+  - I already know what I want I am just being lazy and haven't made it yet.
 * Custom pins
-*  Again I am just being lazy.
+  - Again I am just being lazy.
 * Custom heading view
-*  Not sure how I want these to look. I have an idea but still thinking.
+  - Not sure how I want these to look. I have an idea but still thinking.
 
 I am hoping to finish this bad boy and upload it to the app store over christmas berak :) 
