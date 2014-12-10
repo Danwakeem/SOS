@@ -15,6 +15,13 @@
 		0508612B1A358D4F00B7BAC5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 050861291A358D4F00B7BAC5 /* LaunchScreen.xib */; };
 		050861371A358D4F00B7BAC5 /* SOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050861361A358D4F00B7BAC5 /* SOSTests.swift */; };
 		050861411A35937700B7BAC5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 050861401A35937700B7BAC5 /* MapKit.framework */; };
+		058BA39C1A380794006054B5 /* SOS.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 0508611F1A358D4F00B7BAC5 /* SOS.xcdatamodeld */; };
+		058BA39D1A380AC6006054B5 /* SOS.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 0508611F1A358D4F00B7BAC5 /* SOS.xcdatamodeld */; };
+		05C119131A37EA5E00A921F6 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05C119121A37EA5E00A921F6 /* NotificationCenter.framework */; };
+		05C119271A37EC4D00A921F6 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05C119121A37EA5E00A921F6 /* NotificationCenter.framework */; };
+		05C1192C1A37EC4E00A921F6 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C1192B1A37EC4E00A921F6 /* TodayViewController.swift */; };
+		05C1192E1A37EC4E00A921F6 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05C1192D1A37EC4E00A921F6 /* MainInterface.storyboard */; };
+		05C119311A37EC4E00A921F6 /* TodaySave.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 05C119261A37EC4D00A921F6 /* TodaySave.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,7 +32,28 @@
 			remoteGlobalIDString = 050861171A358D4F00B7BAC5;
 			remoteInfo = SOS;
 		};
+		05C1192F1A37EC4E00A921F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 050861101A358D4F00B7BAC5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05C119251A37EC4D00A921F6;
+			remoteInfo = TodaySave;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		05C119351A37EC4E00A921F6 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				05C119311A37EC4E00A921F6 /* TodaySave.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		050861181A358D4F00B7BAC5 /* SOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +68,14 @@
 		050861351A358D4F00B7BAC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		050861361A358D4F00B7BAC5 /* SOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSTests.swift; sourceTree = "<group>"; };
 		050861401A35937700B7BAC5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		058BA3991A380655006054B5 /* TodaySave.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TodaySave.entitlements; sourceTree = "<group>"; };
+		058BA39B1A38072F006054B5 /* SOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SOS.entitlements; sourceTree = "<group>"; };
+		05C119101A37EA5E00A921F6 /* SOSToday.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SOSToday.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C119121A37EA5E00A921F6 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		05C119261A37EC4D00A921F6 /* TodaySave.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodaySave.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C1192A1A37EC4E00A921F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05C1192B1A37EC4E00A921F6 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		05C1192D1A37EC4E00A921F6 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +94,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		05C1190D1A37EA5E00A921F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05C119131A37EA5E00A921F6 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05C119231A37EC4D00A921F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05C119271A37EC4D00A921F6 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -67,6 +119,8 @@
 				050861401A35937700B7BAC5 /* MapKit.framework */,
 				0508611A1A358D4F00B7BAC5 /* SOS */,
 				050861331A358D4F00B7BAC5 /* SOSTests */,
+				05C119281A37EC4D00A921F6 /* TodaySave */,
+				05C119111A37EA5E00A921F6 /* Frameworks */,
 				050861191A358D4F00B7BAC5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -76,6 +130,8 @@
 			children = (
 				050861181A358D4F00B7BAC5 /* SOS.app */,
 				050861301A358D4F00B7BAC5 /* SOSTests.xctest */,
+				05C119101A37EA5E00A921F6 /* SOSToday.appex */,
+				05C119261A37EC4D00A921F6 /* TodaySave.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -83,6 +139,7 @@
 		0508611A1A358D4F00B7BAC5 /* SOS */ = {
 			isa = PBXGroup;
 			children = (
+				058BA39B1A38072F006054B5 /* SOS.entitlements */,
 				0508611D1A358D4F00B7BAC5 /* AppDelegate.swift */,
 				050861221A358D4F00B7BAC5 /* ViewController.swift */,
 				050861241A358D4F00B7BAC5 /* Main.storyboard */,
@@ -119,6 +176,33 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		05C119111A37EA5E00A921F6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				05C119121A37EA5E00A921F6 /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		05C119281A37EC4D00A921F6 /* TodaySave */ = {
+			isa = PBXGroup;
+			children = (
+				058BA3991A380655006054B5 /* TodaySave.entitlements */,
+				05C1192B1A37EC4E00A921F6 /* TodayViewController.swift */,
+				05C1192D1A37EC4E00A921F6 /* MainInterface.storyboard */,
+				05C119291A37EC4E00A921F6 /* Supporting Files */,
+			);
+			path = TodaySave;
+			sourceTree = "<group>";
+		};
+		05C119291A37EC4E00A921F6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				05C1192A1A37EC4E00A921F6 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -129,10 +213,12 @@
 				050861141A358D4F00B7BAC5 /* Sources */,
 				050861151A358D4F00B7BAC5 /* Frameworks */,
 				050861161A358D4F00B7BAC5 /* Resources */,
+				05C119351A37EC4E00A921F6 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				05C119301A37EC4E00A921F6 /* PBXTargetDependency */,
 			);
 			name = SOS;
 			productName = SOS;
@@ -157,6 +243,40 @@
 			productReference = 050861301A358D4F00B7BAC5 /* SOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		05C1190F1A37EA5E00A921F6 /* SOSToday */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05C119201A37EA5E00A921F6 /* Build configuration list for PBXNativeTarget "SOSToday" */;
+			buildPhases = (
+				05C1190C1A37EA5E00A921F6 /* Sources */,
+				05C1190D1A37EA5E00A921F6 /* Frameworks */,
+				05C1190E1A37EA5E00A921F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SOSToday;
+			productName = SOSToday;
+			productReference = 05C119101A37EA5E00A921F6 /* SOSToday.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		05C119251A37EC4D00A921F6 /* TodaySave */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05C119321A37EC4E00A921F6 /* Build configuration list for PBXNativeTarget "TodaySave" */;
+			buildPhases = (
+				05C119221A37EC4D00A921F6 /* Sources */,
+				05C119231A37EC4D00A921F6 /* Frameworks */,
+				05C119241A37EC4D00A921F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TodaySave;
+			productName = TodaySave;
+			productReference = 05C119261A37EC4D00A921F6 /* TodaySave.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -168,10 +288,28 @@
 				TargetAttributes = {
 					050861171A358D4F00B7BAC5 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 62TN7799Y7;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					0508612F1A358D4F00B7BAC5 = {
 						CreatedOnToolsVersion = 6.1.1;
 						TestTargetID = 050861171A358D4F00B7BAC5;
+					};
+					05C1190F1A37EA5E00A921F6 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					05C119251A37EC4D00A921F6 = {
+						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 62TN7799Y7;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -190,6 +328,8 @@
 			targets = (
 				050861171A358D4F00B7BAC5 /* SOS */,
 				0508612F1A358D4F00B7BAC5 /* SOSTests */,
+				05C1190F1A37EA5E00A921F6 /* SOSToday */,
+				05C119251A37EC4D00A921F6 /* TodaySave */,
 			);
 		};
 /* End PBXProject section */
@@ -199,6 +339,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				058BA39D1A380AC6006054B5 /* SOS.xcdatamodeld in Resources */,
 				050861261A358D4F00B7BAC5 /* Main.storyboard in Resources */,
 				0508612B1A358D4F00B7BAC5 /* LaunchScreen.xib in Resources */,
 				050861281A358D4F00B7BAC5 /* Images.xcassets in Resources */,
@@ -209,6 +350,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05C1190E1A37EA5E00A921F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05C119241A37EC4D00A921F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				058BA39C1A380794006054B5 /* SOS.xcdatamodeld in Resources */,
+				05C1192E1A37EC4E00A921F6 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +390,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		05C1190C1A37EA5E00A921F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05C119221A37EC4D00A921F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05C1192C1A37EC4E00A921F6 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -240,6 +412,11 @@
 			isa = PBXTargetDependency;
 			target = 050861171A358D4F00B7BAC5 /* SOS */;
 			targetProxy = 050861311A358D4F00B7BAC5 /* PBXContainerItemProxy */;
+		};
+		05C119301A37EC4E00A921F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 05C119251A37EC4D00A921F6 /* TodaySave */;
+			targetProxy = 05C1192F1A37EC4E00A921F6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -344,9 +521,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SOS/SOS.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = SOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -354,9 +536,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SOS/SOS.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = SOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -394,6 +581,62 @@
 			};
 			name = Release;
 		};
+		05C1191E1A37EA5E00A921F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SOSToday/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		05C1191F1A37EA5E00A921F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SOSToday/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		05C119331A37EC4E00A921F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TodaySave/TodaySave.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TodaySave/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		05C119341A37EC4E00A921F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TodaySave/TodaySave.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = TodaySave/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -413,6 +656,7 @@
 				0508613C1A358D4F00B7BAC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0508613D1A358D4F00B7BAC5 /* Build configuration list for PBXNativeTarget "SOSTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +665,25 @@
 				0508613F1A358D4F00B7BAC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		05C119201A37EA5E00A921F6 /* Build configuration list for PBXNativeTarget "SOSToday" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05C1191E1A37EA5E00A921F6 /* Debug */,
+				05C1191F1A37EA5E00A921F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		05C119321A37EC4E00A921F6 /* Build configuration list for PBXNativeTarget "TodaySave" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05C119331A37EC4E00A921F6 /* Debug */,
+				05C119341A37EC4E00A921F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

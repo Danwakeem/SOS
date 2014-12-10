@@ -43,7 +43,6 @@
                                 </variation>
                                 <connections>
                                     <action selector="setCarLocation" destination="vXZ-lx-hvc" eventType="touchUpInside" id="AL8-OO-Xzb"/>
-                                    <action selector="toggleBtn" destination="vXZ-lx-hvc" eventType="touchUpInside" id="UZF-GX-xN1"/>
                                 </connections>
                             </button>
                         </subviews>

@@ -19,12 +19,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     
     var locationManager: CLLocationManager!
     
+    let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+    var managedContext: NSManagedObjectContext!
+    
+    
     //Will turn this into a dictinary to allow for multiple items later
     //for now I am just adding a car:)
     //var car = NSManagedObject()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Setting up managedContext so I can use core Data later
+        self.managedContext = appDelegate.managedObjectContext!
         self.locationManager = CLLocationManager()
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -33,18 +39,28 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         self.locationManager.startUpdatingLocation()
         
         //Load from Core Data if avalible
-        self.isCarAlreadySet(true)
+        if(self.isCarAlreadySet(true)) {
+            toggleButtonColor("Red")
+        }
+        
+        //Not sure if this is right because the animation stops when I put it here versus after the button press
+        self.locationManager.stopUpdatingLocation()
+        
     }
     
     //Set a pin for new location or not
     //Eventually the pin will be cleared so I am just prepairing
     @IBAction func setCarLocation(){
         if(isCarAlreadySet(false)){
-            println("NOT SETTING NEW Anotation")
+            println("Deleting car from core data")
+            self.removeCarFromCoreData()
+            self.myMap.removeAnnotations(myMap.annotations)
+            self.toggleButtonColor("Blue")
         } else {
             self.setAnnotationForCar()
             self.persistObjectToCore()
-            self.locationManager.stopUpdatingLocation()
+            //self.locationManager.stopUpdatingLocation()
+            toggleButtonColor("Red")
         }
     }
     
@@ -86,11 +102,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     //Persist location data for object
     //I call this an object becasue in the future I am going allow the user to save multiple objects locations
     func persistObjectToCore(){
-        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
-        let managedContext = appDelegate.managedObjectContext!
-        let entity = NSEntityDescription.entityForName("ObjectLocation", inManagedObjectContext: managedContext)
+        let entity = NSEntityDescription.entityForName("ObjectLocation", inManagedObjectContext: self.managedContext)
         
-        let item = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+        let item = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: self.managedContext)
         
         var lat: Double = self.locationManager.location.coordinate.latitude
         var lon: Double = self.locationManager.location.coordinate.longitude
@@ -100,7 +114,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         item.setValue(lon, forKey: "longitude")
         
         var error: NSError?
-        if(!managedContext.save(&error)){
+        if(!self.managedContext.save(&error)){
             println("Could not save \(error), \(error?.userInfo)")
         }
     }
@@ -109,12 +123,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     //In the future when the user can set more objects I will be adding more else if statements but for now it is just cars.
     func isCarAlreadySet(setAnotation: Bool) -> Bool{
         var arr = [AnyObject]()
-        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
-        let managedContext = appDelegate.managedObjectContext!
-        let entity = NSEntityDescription.entityForName("ObjectLocation", inManagedObjectContext: managedContext)
+        let entity = NSEntityDescription.entityForName("ObjectLocation", inManagedObjectContext: self.managedContext)
         let fetchedRequest = NSFetchRequest(entityName: "ObjectLocation")
         var error: NSError?
-        let fetchedResults = managedContext.executeFetchRequest(fetchedRequest, error: &error) as [NSManagedObject]?
+        let fetchedResults = self.managedContext.executeFetchRequest(fetchedRequest, error: &error) as [NSManagedObject]?
         if let results = fetchedResults {
             for obj in results{
                 var name: String = obj.valueForKey("object")! as NSString
@@ -130,6 +142,44 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
             println("Could not fetch \(error), \(error!.userInfo)")
         }
         return false
+    }
+    
+    //Here I am removing the car from core data
+    func removeCarFromCoreData() {
+        var arr = [AnyObject]()
+        let entity = NSEntityDescription.entityForName("ObjectLocation", inManagedObjectContext: self.managedContext)
+        let fetchRequest = NSFetchRequest(entityName: "ObjectLocation")
+        //let predicate = NSPredicate(format: "object == %s", "Car")
+        //fetchRequest.predicate = predicate
+        var error: NSError?
+        let carObject = self.managedContext.executeFetchRequest(fetchRequest, error: &error) as [NSManagedObject]?
+        if let results = carObject{
+            for obj in results{
+                var name: String = obj.valueForKey("object")! as NSString
+                println(name)
+                if(name == "Car"){
+                    self.managedContext.deleteObject(obj)
+                    var err: NSError?
+                    if(!self.managedContext.save(&err)){
+                        println("Could not save \(err), \(err?.userInfo)")
+                    }
+                }
+            }
+        } else {
+            println("Could not fetch \(error), \(error!.userInfo)")
+        }
+        
+    }
+    
+    //Changing the add car button color
+    func toggleButtonColor(s: String){
+        if(s == "Red"){
+            toggle.backgroundColor = UIColor.redColor()
+            toggle.setTitle("-", forState: .Normal)
+        } else {
+            toggle.backgroundColor = UIColor.blueColor()
+            toggle.setTitle("+", forState: .Normal)
+        }
     }
     
     //Rid the screen of the status bar
