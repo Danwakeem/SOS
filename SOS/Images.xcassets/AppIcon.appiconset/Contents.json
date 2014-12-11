@@ -23,13 +23,13 @@
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "SOS-icon-app.png",
+      "filename" : "sample.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "SOS-icon-app-1.png",
+      "filename" : "sample-1.png",
       "scale" : "3x"
     }
   ],

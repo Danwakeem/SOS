@@ -4,20 +4,20 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>LuvExtensions.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 		<key>SOS.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>SOSToday.xcscheme</key>
+		<key>SOSExtension.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
-		</dict>
-		<key>TodaySave.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>5</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -28,6 +28,21 @@
 			<true/>
 		</dict>
 		<key>0508612F1A358D4F00B7BAC5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>05394EC71A39EDFB0016F281</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>05394EDC1A39F11F0016F281</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>059E0FA91A3932CE009BE9EC</key>
 		<dict>
 			<key>primary</key>
 			<true/>

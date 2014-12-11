@@ -15,9 +15,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "05C1190F1A37EA5E00A921F6"
-               BuildableName = "SOSToday.appex"
-               BlueprintName = "SOSToday"
+               BlueprintIdentifier = "05394EDC1A39F11F0016F281"
+               BuildableName = "SOSExtension.appex"
+               BlueprintName = "SOSExtension"
                ReferencedContainer = "container:SOS.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,9 +47,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "05C1190F1A37EA5E00A921F6"
-            BuildableName = "SOSToday.appex"
-            BlueprintName = "SOSToday"
+            BlueprintIdentifier = "05394EDC1A39F11F0016F281"
+            BuildableName = "SOSExtension.appex"
+            BlueprintName = "SOSExtension"
             ReferencedContainer = "container:SOS.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

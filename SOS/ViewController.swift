@@ -41,10 +41,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         //Load from Core Data if avalible
         if(self.isCarAlreadySet(true)) {
             toggleButtonColor("Red")
+        } else {
+            if(myMap.annotations != nil){
+                myMap.removeAnnotations(myMap.annotations)
+                toggleButtonColor("Blue")
+            }
         }
-        
-        //Not sure if this is right because the animation stops when I put it here versus after the button press
-        self.locationManager.stopUpdatingLocation()
         
     }
     
@@ -59,7 +61,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         } else {
             self.setAnnotationForCar()
             self.persistObjectToCore()
-            //self.locationManager.stopUpdatingLocation()
+            self.locationManager.stopUpdatingLocation()
             toggleButtonColor("Red")
         }
     }
@@ -156,7 +158,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         if let results = carObject{
             for obj in results{
                 var name: String = obj.valueForKey("object")! as NSString
-                println(name)
                 if(name == "Car"){
                     self.managedContext.deleteObject(obj)
                     var err: NSError?
@@ -174,10 +175,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     //Changing the add car button color
     func toggleButtonColor(s: String){
         if(s == "Red"){
-            toggle.backgroundColor = UIColor.redColor()
+            toggle.backgroundColor = UIColor(red: 220.0 / 255.0, green: 68.0 / 255.0, blue: 55.0 / 255.0, alpha: 1.0)
             toggle.setTitle("-", forState: .Normal)
         } else {
-            toggle.backgroundColor = UIColor.blueColor()
+            toggle.backgroundColor = UIColor(red: 62.0 / 255.0, green: 121.0 / 255.0, blue: 253.0 / 255.0, alpha: 1.0)
+            //toggle.backgroundColor = UIColor.blueColor()
             toggle.setTitle("+", forState: .Normal)
         }
     }
