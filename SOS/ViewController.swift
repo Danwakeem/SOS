@@ -17,16 +17,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     
     @IBOutlet var toggle: UIButton!
     
-    var locationManager: CLLocationManager!
-    
-    let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
-    var managedContext: NSManagedObjectContext!
+    //This now contains all of the model interactions
     let CoreModel = CoreDataModel()
+    var locationManager: CLLocationManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Setting up managedContext so I can use core Data later
-        self.managedContext = appDelegate.managedObjectContext!
         self.locationManager = CLLocationManager()
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -35,7 +31,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         self.locationManager.startUpdatingLocation()
         
         //Load from Core Data if avalible
-        if let obj = self.CoreModel.isCarAlreadySet(self.managedContext) {
+        if let obj = self.CoreModel.isCarAlreadySet() {
             self.setAnnotationForCar(car: obj)
             toggleButtonColor("Red")
         } else {
@@ -44,19 +40,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
                 toggleButtonColor("Blue")
             }
         }
-        
     }
     
     //Set a pin for new location or remove existing pin
     @IBAction func setCarLocation(){
-        if let obj = self.CoreModel.isCarAlreadySet(self.managedContext){
+        if let obj = self.CoreModel.isCarAlreadySet(){
             println("Deleting car from core data")
-            self.CoreModel.removeCarFromCoreData(self.managedContext)
+            self.CoreModel.removeCarFromCoreData()
             self.myMap.removeAnnotations(myMap.annotations)
             self.toggleButtonColor("Blue")
         } else {
             self.setAnnotationForCar()
-            self.CoreModel.persistObjectToCore(self.locationManager ,managedContext: self.managedContext)
+            self.CoreModel.persistObjectToCore(self.locationManager)
             self.locationManager.stopUpdatingLocation()
             toggleButtonColor("Red")
         }
