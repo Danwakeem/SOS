@@ -21,6 +21,7 @@
 		05394EE81A39F11F0016F281 /* SOSExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 05394EDD1A39F11F0016F281 /* SOSExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		05394EEE1A39F2870016F281 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05394EED1A39F2870016F281 /* CoreLocation.framework */; };
 		05394EEF1A39F2910016F281 /* SOS.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 0508611F1A358D4F00B7BAC5 /* SOS.xcdatamodeld */; };
+		05394EF11A39F6E70016F281 /* CoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05394EF01A39F6E70016F281 /* CoreDataModel.swift */; };
 		058BA39D1A380AC6006054B5 /* SOS.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 0508611F1A358D4F00B7BAC5 /* SOS.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,7 @@
 		05394EE41A39F11F0016F281 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		05394EEC1A39F26A0016F281 /* SOSExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SOSExtension.entitlements; sourceTree = "<group>"; };
 		05394EED1A39F2870016F281 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		05394EF01A39F6E70016F281 /* CoreDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataModel.swift; sourceTree = "<group>"; };
 		058BA39B1A38072F006054B5 /* SOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SOS.entitlements; sourceTree = "<group>"; };
 		05C119121A37EA5E00A921F6 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -133,6 +135,7 @@
 			children = (
 				058BA39B1A38072F006054B5 /* SOS.entitlements */,
 				0508611D1A358D4F00B7BAC5 /* AppDelegate.swift */,
+				05394EF01A39F6E70016F281 /* CoreDataModel.swift */,
 				050861221A358D4F00B7BAC5 /* ViewController.swift */,
 				050861241A358D4F00B7BAC5 /* Main.storyboard */,
 				050861271A358D4F00B7BAC5 /* Images.xcassets */,
@@ -343,6 +346,7 @@
 			files = (
 				050861231A358D4F00B7BAC5 /* ViewController.swift in Sources */,
 				0508611E1A358D4F00B7BAC5 /* AppDelegate.swift in Sources */,
+				05394EF11A39F6E70016F281 /* CoreDataModel.swift in Sources */,
 				050861211A358D4F00B7BAC5 /* SOS.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

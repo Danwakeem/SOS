@@ -61,7 +61,6 @@ class TodayViewController: UIViewController, CLLocationManagerDelegate, NCWidget
             for obj in results{
                 var name: String = obj.valueForKey("object")! as NSString
                 if(name == "Car"){
-                    //
                     return true
                 }
             }

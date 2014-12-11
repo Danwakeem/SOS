@@ -21,11 +21,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     
     let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
     var managedContext: NSManagedObjectContext!
-    
-    
-    //Will turn this into a dictinary to allow for multiple items later
-    //for now I am just adding a car:)
-    //var car = NSManagedObject()
+    let CoreModel = CoreDataModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +35,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         self.locationManager.startUpdatingLocation()
         
         //Load from Core Data if avalible
-        if(self.isCarAlreadySet(true)) {
+        if let obj = self.CoreModel.isCarAlreadySet(self.managedContext) {
+            self.setAnnotationForCar(car: obj)
             toggleButtonColor("Red")
         } else {
             if(myMap.annotations != nil){
@@ -50,17 +47,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         
     }
     
-    //Set a pin for new location or not
-    //Eventually the pin will be cleared so I am just prepairing
+    //Set a pin for new location or remove existing pin
     @IBAction func setCarLocation(){
-        if(isCarAlreadySet(false)){
+        if let obj = self.CoreModel.isCarAlreadySet(self.managedContext){
             println("Deleting car from core data")
-            self.removeCarFromCoreData()
+            self.CoreModel.removeCarFromCoreData(self.managedContext)
             self.myMap.removeAnnotations(myMap.annotations)
             self.toggleButtonColor("Blue")
         } else {
             self.setAnnotationForCar()
-            self.persistObjectToCore()
+            self.CoreModel.persistObjectToCore(self.locationManager ,managedContext: self.managedContext)
             self.locationManager.stopUpdatingLocation()
             toggleButtonColor("Red")
         }
@@ -79,97 +75,25 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     }
     
     //Set anotation for car after getting location from CoreData
-    func setAnnotationForCar(car: NSManagedObject){
-        var lat: CLLocationDegrees = car.valueForKey("latitude")! as CLLocationDegrees
-        var lon: CLLocationDegrees = car.valueForKey("longitude")! as CLLocationDegrees
-        var anotation = MKPointAnnotation()
-        var location: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: lat, longitude: lon)
-        anotation.coordinate = location
-        anotation.title = "Your Car is here"
-        anotation.subtitle = "Go get it :)"
-        myMap.addAnnotation(anotation)
-    }
-    
-    //Set anotation for car if one does not exist
-    func setAnnotationForCar(){
-        var currentLocation: CLLocationCoordinate2D = self.locationManager.location.coordinate
-        var anotation = MKPointAnnotation()
-        var location: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: currentLocation.latitude, longitude: currentLocation.longitude)
-        anotation.coordinate = location
-        anotation.title = "Your Car is here"
-        anotation.subtitle = "It has been saved :)"
-        myMap.addAnnotation(anotation)
-    }
-    
-    //Persist location data for object
-    //I call this an object becasue in the future I am going allow the user to save multiple objects locations
-    func persistObjectToCore(){
-        let entity = NSEntityDescription.entityForName("ObjectLocation", inManagedObjectContext: self.managedContext)
-        
-        let item = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: self.managedContext)
-        
-        var lat: Double = self.locationManager.location.coordinate.latitude
-        var lon: Double = self.locationManager.location.coordinate.longitude
-        
-        item.setValue("Car", forKey: "object")
-        item.setValue(lat, forKey: "latitude")
-        item.setValue(lon, forKey: "longitude")
-        
-        var error: NSError?
-        if(!self.managedContext.save(&error)){
-            println("Could not save \(error), \(error?.userInfo)")
-        }
-    }
-    
-    //Check to see if a car is already set
-    //In the future when the user can set more objects I will be adding more else if statements but for now it is just cars.
-    func isCarAlreadySet(setAnotation: Bool) -> Bool{
-        var arr = [AnyObject]()
-        let entity = NSEntityDescription.entityForName("ObjectLocation", inManagedObjectContext: self.managedContext)
-        let fetchedRequest = NSFetchRequest(entityName: "ObjectLocation")
-        var error: NSError?
-        let fetchedResults = self.managedContext.executeFetchRequest(fetchedRequest, error: &error) as [NSManagedObject]?
-        if let results = fetchedResults {
-            for obj in results{
-                var name: String = obj.valueForKey("object")! as NSString
-                if(name == "Car"){
-                    if(setAnotation){
-                        self.setAnnotationForCar(obj)
-                        self.locationManager.stopUpdatingLocation()
-                    }
-                    return true
-                }
-            }
+    func setAnnotationForCar(car: NSManagedObject! = nil){
+        if(car != nil){
+            var lat: CLLocationDegrees = car.valueForKey("latitude")! as CLLocationDegrees
+            var lon: CLLocationDegrees = car.valueForKey("longitude")! as CLLocationDegrees
+            var location: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: lat, longitude: lon)
+            var anotation = MKPointAnnotation()
+            anotation.coordinate = location
+            anotation.title = "Your Car is here"
+            anotation.subtitle = "Go get it :)"
+            myMap.addAnnotation(anotation)
         } else {
-            println("Could not fetch \(error), \(error!.userInfo)")
+            var currentLocation: CLLocationCoordinate2D = self.locationManager.location.coordinate
+            var location: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: currentLocation.latitude, longitude: currentLocation.longitude)
+            var anotation = MKPointAnnotation()
+            anotation.coordinate = location
+            anotation.title = "Your Car is here"
+            anotation.subtitle = "It has been saved :)"
+            myMap.addAnnotation(anotation)
         }
-        return false
-    }
-    
-    //Here I am removing the car from core data
-    func removeCarFromCoreData() {
-        var arr = [AnyObject]()
-        let entity = NSEntityDescription.entityForName("ObjectLocation", inManagedObjectContext: self.managedContext)
-        let fetchRequest = NSFetchRequest(entityName: "ObjectLocation")
-        //let predicate = NSPredicate(format: "object == %s", "Car")
-        //fetchRequest.predicate = predicate
-        var error: NSError?
-        let carObject = self.managedContext.executeFetchRequest(fetchRequest, error: &error) as [NSManagedObject]?
-        if let results = carObject{
-            for obj in results{
-                var name: String = obj.valueForKey("object")! as NSString
-                if(name == "Car"){
-                    self.managedContext.deleteObject(obj)
-                    var err: NSError?
-                    if(!self.managedContext.save(&err)){
-                        println("Could not save \(err), \(err?.userInfo)")
-                    }
-                }
-            }
-        } else {
-            println("Could not fetch \(error), \(error!.userInfo)")
-        }
-        
     }
     
     //Changing the add car button color
