@@ -15,6 +15,13 @@
 		0508612B1A358D4F00B7BAC5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 050861291A358D4F00B7BAC5 /* LaunchScreen.xib */; };
 		050861371A358D4F00B7BAC5 /* SOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050861361A358D4F00B7BAC5 /* SOSTests.swift */; };
 		050861411A35937700B7BAC5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 050861401A35937700B7BAC5 /* MapKit.framework */; };
+		0538A58A1A3A11EB0093FEF1 /* SOSKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 0538A5891A3A11EB0093FEF1 /* SOSKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0538A5901A3A11EB0093FEF1 /* SOSKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0538A5851A3A11EB0093FEF1 /* SOSKit.framework */; };
+		0538A5991A3A11EB0093FEF1 /* SOSKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0538A5981A3A11EB0093FEF1 /* SOSKitTests.swift */; };
+		0538A59C1A3A11EB0093FEF1 /* SOSKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0538A5851A3A11EB0093FEF1 /* SOSKit.framework */; };
+		0538A59D1A3A11EB0093FEF1 /* SOSKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0538A5851A3A11EB0093FEF1 /* SOSKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0538A5A51A3A12170093FEF1 /* SOSCoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0538A5A41A3A12170093FEF1 /* SOSCoreDataModel.swift */; };
+		0538A5A81A3A13B30093FEF1 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05394EE21A39F11F0016F281 /* TodayViewController.swift */; };
 		05394EDE1A39F11F0016F281 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05C119121A37EA5E00A921F6 /* NotificationCenter.framework */; };
 		05394EE31A39F11F0016F281 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05394EE21A39F11F0016F281 /* TodayViewController.swift */; };
 		05394EE51A39F11F0016F281 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05394EE41A39F11F0016F281 /* MainInterface.storyboard */; };
@@ -33,6 +40,27 @@
 			remoteGlobalIDString = 050861171A358D4F00B7BAC5;
 			remoteInfo = SOS;
 		};
+		0538A5911A3A11EB0093FEF1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 050861101A358D4F00B7BAC5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0538A5841A3A11EB0093FEF1;
+			remoteInfo = SOSKit;
+		};
+		0538A5931A3A11EB0093FEF1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 050861101A358D4F00B7BAC5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 050861171A358D4F00B7BAC5;
+			remoteInfo = SOS;
+		};
+		0538A59A1A3A11EB0093FEF1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 050861101A358D4F00B7BAC5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0538A5841A3A11EB0093FEF1;
+			remoteInfo = SOSKit;
+		};
 		05394EE61A39F11F0016F281 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 050861101A358D4F00B7BAC5 /* Project object */;
@@ -43,6 +71,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		0538A57C1A3A10D00093FEF1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0538A59D1A3A11EB0093FEF1 /* SOSKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		05C119351A37EC4E00A921F6 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -69,6 +108,13 @@
 		050861351A358D4F00B7BAC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		050861361A358D4F00B7BAC5 /* SOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSTests.swift; sourceTree = "<group>"; };
 		050861401A35937700B7BAC5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		0538A5851A3A11EB0093FEF1 /* SOSKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SOSKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0538A5881A3A11EB0093FEF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0538A5891A3A11EB0093FEF1 /* SOSKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SOSKit.h; sourceTree = "<group>"; };
+		0538A58F1A3A11EB0093FEF1 /* SOSKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SOSKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0538A5971A3A11EB0093FEF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0538A5981A3A11EB0093FEF1 /* SOSKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSKitTests.swift; sourceTree = "<group>"; };
+		0538A5A41A3A12170093FEF1 /* SOSCoreDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOSCoreDataModel.swift; sourceTree = "<group>"; };
 		05394EDD1A39F11F0016F281 /* SOSExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SOSExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		05394EE11A39F11F0016F281 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05394EE21A39F11F0016F281 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				050861411A35937700B7BAC5 /* MapKit.framework in Frameworks */,
+				0538A59C1A3A11EB0093FEF1 /* SOSKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +140,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0538A5811A3A11EB0093FEF1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0538A58C1A3A11EB0093FEF1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0538A5901A3A11EB0093FEF1 /* SOSKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,12 +173,14 @@
 		0508610F1A358D4F00B7BAC5 = {
 			isa = PBXGroup;
 			children = (
-				050861401A35937700B7BAC5 /* MapKit.framework */,
 				0508611A1A358D4F00B7BAC5 /* SOS */,
 				050861331A358D4F00B7BAC5 /* SOSTests */,
 				05394EDF1A39F11F0016F281 /* SOSExtension */,
+				0538A5861A3A11EB0093FEF1 /* SOSKit */,
+				0538A5951A3A11EB0093FEF1 /* SOSKitTests */,
 				05C119111A37EA5E00A921F6 /* Frameworks */,
 				050861191A358D4F00B7BAC5 /* Products */,
+				050861401A35937700B7BAC5 /* MapKit.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,6 +190,8 @@
 				050861181A358D4F00B7BAC5 /* SOS.app */,
 				050861301A358D4F00B7BAC5 /* SOSTests.xctest */,
 				05394EDD1A39F11F0016F281 /* SOSExtension.appex */,
+				0538A5851A3A11EB0093FEF1 /* SOSKit.framework */,
+				0538A58F1A3A11EB0093FEF1 /* SOSKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -171,6 +237,41 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		0538A5861A3A11EB0093FEF1 /* SOSKit */ = {
+			isa = PBXGroup;
+			children = (
+				0538A5A41A3A12170093FEF1 /* SOSCoreDataModel.swift */,
+				0538A5891A3A11EB0093FEF1 /* SOSKit.h */,
+				0538A5871A3A11EB0093FEF1 /* Supporting Files */,
+			);
+			path = SOSKit;
+			sourceTree = "<group>";
+		};
+		0538A5871A3A11EB0093FEF1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0538A5881A3A11EB0093FEF1 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0538A5951A3A11EB0093FEF1 /* SOSKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				0538A5981A3A11EB0093FEF1 /* SOSKitTests.swift */,
+				0538A5961A3A11EB0093FEF1 /* Supporting Files */,
+			);
+			path = SOSKitTests;
+			sourceTree = "<group>";
+		};
+		0538A5961A3A11EB0093FEF1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0538A5971A3A11EB0093FEF1 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		05394EDF1A39F11F0016F281 /* SOSExtension */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +302,17 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		0538A5821A3A11EB0093FEF1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0538A58A1A3A11EB0093FEF1 /* SOSKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		050861171A358D4F00B7BAC5 /* SOS */ = {
 			isa = PBXNativeTarget;
@@ -210,11 +322,13 @@
 				050861151A358D4F00B7BAC5 /* Frameworks */,
 				050861161A358D4F00B7BAC5 /* Resources */,
 				05C119351A37EC4E00A921F6 /* Embed App Extensions */,
+				0538A57C1A3A10D00093FEF1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				05394EE71A39F11F0016F281 /* PBXTargetDependency */,
+				0538A59B1A3A11EB0093FEF1 /* PBXTargetDependency */,
 			);
 			name = SOS;
 			productName = SOS;
@@ -237,6 +351,43 @@
 			name = SOSTests;
 			productName = SOSTests;
 			productReference = 050861301A358D4F00B7BAC5 /* SOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0538A5841A3A11EB0093FEF1 /* SOSKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0538A59E1A3A11EB0093FEF1 /* Build configuration list for PBXNativeTarget "SOSKit" */;
+			buildPhases = (
+				0538A5801A3A11EB0093FEF1 /* Sources */,
+				0538A5811A3A11EB0093FEF1 /* Frameworks */,
+				0538A5821A3A11EB0093FEF1 /* Headers */,
+				0538A5831A3A11EB0093FEF1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SOSKit;
+			productName = SOSKit;
+			productReference = 0538A5851A3A11EB0093FEF1 /* SOSKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		0538A58E1A3A11EB0093FEF1 /* SOSKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0538A5A11A3A11EB0093FEF1 /* Build configuration list for PBXNativeTarget "SOSKitTests" */;
+			buildPhases = (
+				0538A58B1A3A11EB0093FEF1 /* Sources */,
+				0538A58C1A3A11EB0093FEF1 /* Frameworks */,
+				0538A58D1A3A11EB0093FEF1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0538A5921A3A11EB0093FEF1 /* PBXTargetDependency */,
+				0538A5941A3A11EB0093FEF1 /* PBXTargetDependency */,
+			);
+			name = SOSKitTests;
+			productName = SOSKitTests;
+			productReference = 0538A58F1A3A11EB0093FEF1 /* SOSKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		05394EDC1A39F11F0016F281 /* SOSExtension */ = {
@@ -278,6 +429,14 @@
 						CreatedOnToolsVersion = 6.1.1;
 						TestTargetID = 050861171A358D4F00B7BAC5;
 					};
+					0538A5841A3A11EB0093FEF1 = {
+						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 62TN7799Y7;
+					};
+					0538A58E1A3A11EB0093FEF1 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 050861171A358D4F00B7BAC5;
+					};
 					05394EDC1A39F11F0016F281 = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = 62TN7799Y7;
@@ -305,6 +464,8 @@
 				050861171A358D4F00B7BAC5 /* SOS */,
 				0508612F1A358D4F00B7BAC5 /* SOSTests */,
 				05394EDC1A39F11F0016F281 /* SOSExtension */,
+				0538A5841A3A11EB0093FEF1 /* SOSKit */,
+				0538A58E1A3A11EB0093FEF1 /* SOSKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -322,6 +483,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		0508612E1A358D4F00B7BAC5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0538A5831A3A11EB0093FEF1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0538A58D1A3A11EB0093FEF1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -359,6 +534,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0538A5801A3A11EB0093FEF1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0538A5A81A3A13B30093FEF1 /* TodayViewController.swift in Sources */,
+				0538A5A51A3A12170093FEF1 /* SOSCoreDataModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0538A58B1A3A11EB0093FEF1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0538A5991A3A11EB0093FEF1 /* SOSKitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		05394ED91A39F11F0016F281 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -374,6 +566,21 @@
 			isa = PBXTargetDependency;
 			target = 050861171A358D4F00B7BAC5 /* SOS */;
 			targetProxy = 050861311A358D4F00B7BAC5 /* PBXContainerItemProxy */;
+		};
+		0538A5921A3A11EB0093FEF1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0538A5841A3A11EB0093FEF1 /* SOSKit */;
+			targetProxy = 0538A5911A3A11EB0093FEF1 /* PBXContainerItemProxy */;
+		};
+		0538A5941A3A11EB0093FEF1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 050861171A358D4F00B7BAC5 /* SOS */;
+			targetProxy = 0538A5931A3A11EB0093FEF1 /* PBXContainerItemProxy */;
+		};
+		0538A59B1A3A11EB0093FEF1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0538A5841A3A11EB0093FEF1 /* SOSKit */;
+			targetProxy = 0538A59A1A3A11EB0093FEF1 /* PBXContainerItemProxy */;
 		};
 		05394EE71A39F11F0016F281 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -543,6 +750,87 @@
 			};
 			name = Release;
 		};
+		0538A59F1A3A11EB0093FEF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SOSKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		0538A5A01A3A11EB0093FEF1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SOSKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		0538A5A21A3A11EB0093FEF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SOSKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SOS.app/SOS";
+			};
+			name = Debug;
+		};
+		0538A5A31A3A11EB0093FEF1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SOSKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SOS.app/SOS";
+			};
+			name = Release;
+		};
 		05394EEA1A39F11F0016F281 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -605,6 +893,22 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		0538A59E1A3A11EB0093FEF1 /* Build configuration list for PBXNativeTarget "SOSKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0538A59F1A3A11EB0093FEF1 /* Debug */,
+				0538A5A01A3A11EB0093FEF1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0538A5A11A3A11EB0093FEF1 /* Build configuration list for PBXNativeTarget "SOSKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0538A5A21A3A11EB0093FEF1 /* Debug */,
+				0538A5A31A3A11EB0093FEF1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		05394EE91A39F11F0016F281 /* Build configuration list for PBXNativeTarget "SOSExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -612,6 +916,7 @@
 				05394EEB1A39F11F0016F281 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -4,7 +4,18 @@ This is an iPhone app that allows a user to save a location they might want to r
 
 It should be easy to build but we will see. This it toally a work in progress so if you want to fork this project be prepaired it will be super ugly until I get all of the parts I want working working.
 
+## My Core Data Model
+
+So when I started designing my core data model I decided in the future I want to allow users to add as many items to their map as they want. I really want to keep the interface nice and simple so I am going to use the poo button as a toggle between all of the locations they have saved. So with that being said I just call the object being stored an object and the location saved as longitude and latitude.
+
+Attrubute | Value
+--------- | ------
+object    | String
+longitude | float
+latitude  | float
+
 ## Featured to be added.
+
 * Navigation
   - Drawing a route to your car.
 * Today Extension

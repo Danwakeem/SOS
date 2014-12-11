@@ -35,6 +35,34 @@
                ReferencedContainer = "container:SOS.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "0538A5691A3A10CF0093FEF1"
+               BuildableName = "CoreDataModelKitTests.xctest"
+               BlueprintName = "CoreDataModelKitTests"
+               ReferencedContainer = "container:SOS.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "0538A58E1A3A11EB0093FEF1"
+               BuildableName = "SOSKitTests.xctest"
+               BlueprintName = "SOSKitTests"
+               ReferencedContainer = "container:SOS.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -43,13 +71,33 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "0538A5691A3A10CF0093FEF1"
+               BuildableName = "CoreDataModelKitTests.xctest"
+               BlueprintName = "CoreDataModelKitTests"
+               ReferencedContainer = "container:SOS.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "0538A58E1A3A11EB0093FEF1"
+               BuildableName = "SOSKitTests.xctest"
+               BlueprintName = "SOSKitTests"
+               ReferencedContainer = "container:SOS.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "05394EDC1A39F11F0016F281"
-            BuildableName = "SOSExtension.appex"
-            BlueprintName = "SOSExtension"
+            BlueprintIdentifier = "050861171A358D4F00B7BAC5"
+            BuildableName = "SOS.app"
+            BlueprintName = "SOS"
             ReferencedContainer = "container:SOS.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

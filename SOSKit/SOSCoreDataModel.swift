@@ -1,108 +1,82 @@
 //
-//  TodayViewController.swift
-//  SOSExtension
+//  SOSCoreDataModel.swift
+//  SOS
 //
 //  Created by Dan jarvis on 12/11/14.
 //  Copyright (c) 2014 Dan jarvis. All rights reserved.
 //
 
-import UIKit
-import NotificationCenter
+import Foundation
 import CoreLocation
 import CoreData
 
-class TodayViewController: UIViewController, CLLocationManagerDelegate, NCWidgetProviding {
+//Need to make this class a frame work so I can access it from my today extension
+public class SOSKitModel{
     
-    var context: NSManagedObjectContext!
-    var locationManager: CLLocationManager!
-    var locationState: Bool = false
+    //Will add a dictionary of objects later but for now it is just the CoreData access methods
+    //let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+    public var managedContext: NSManagedObjectContext!
     
-    @IBOutlet var saveLocation: UIButton!
-        
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view from its nib.
-        self.context = self.managedObjectContext!
-        
-        self.locationManager = CLLocationManager()
-        self.locationManager.delegate = self
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        self.locationManager.requestAlwaysAuthorization()
-        self.locationManager.requestWhenInUseAuthorization()
-        self.locationManager.startUpdatingLocation()
-        self.locationManager.stopUpdatingLocation()
-        
-        if(isCarAlreadySet()){
-            self.flipLocationState()
-        }
-        println(self.locationState)
+    public init(){
+        managedContext = self.managedObjectContext!
     }
     
-    @IBAction func saveThisLocation(){
-        println("Getting location...")
-        if(self.locationState){
-            self.removeCarFromCoreData()
-            self.flipLocationState()
-        } else {
-            self.addCarToCoreData()
-            self.flipLocationState()
-            //self.locationManager.stopUpdatingLocation()
-        }
-    }
-    
-    func isCarAlreadySet() -> Bool{
-        var arr = [AnyObject]()
-        let entity = NSEntityDescription.entityForName("ObjectLocation", inManagedObjectContext: self.context)
-        let fetchedRequest = NSFetchRequest(entityName: "ObjectLocation")
-        var error: NSError?
-        let fetchedResults = self.context.executeFetchRequest(fetchedRequest, error: &error) as [NSManagedObject]?
-        if let results = fetchedResults {
-            for obj in results{
-                var name: String = obj.valueForKey("object")! as NSString
-                if(name == "Car"){
-                    return true
-                }
-            }
-        } else {
-            println("Could not fetch \(error), \(error!.userInfo)")
-        }
-        return false
-    }
-    
-    func addCarToCoreData(){
-        let entity = NSEntityDescription.entityForName("ObjectLocation", inManagedObjectContext: self.context)
+    //Persist location data for object
+    //I call this an object becasue in the future I am going allow the user to save multiple objects locations
+    public func persistObjectToCore(locationManager: CLLocationManager){
+        let entity = NSEntityDescription.entityForName("ObjectLocation", inManagedObjectContext: self.managedContext)
         
-        let item = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: self.context)
+        let item = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: self.managedContext)
         
-        var lat: Double = self.locationManager.location.coordinate.latitude
-        var lon: Double = self.locationManager.location.coordinate.longitude
+        var lat: Double = locationManager.location.coordinate.latitude
+        var lon: Double = locationManager.location.coordinate.longitude
         
         item.setValue("Car", forKey: "object")
         item.setValue(lat, forKey: "latitude")
         item.setValue(lon, forKey: "longitude")
         
         var error: NSError?
-        if(!self.context.save(&error)){
+        if(!self.managedContext.save(&error)){
             println("Could not save \(error), \(error?.userInfo)")
         }
     }
     
+    //Check to see if a car is already set
+    //In the future when the user can set more objects I will be adding more else if statements but for now it is just cars.
+    public func isCarAlreadySet() -> NSManagedObject!{
+        let entity = NSEntityDescription.entityForName("ObjectLocation", inManagedObjectContext: self.managedContext)
+        let fetchedRequest = NSFetchRequest(entityName: "ObjectLocation")
+        var error: NSError?
+        let fetchedResults = self.managedContext.executeFetchRequest(fetchedRequest, error: &error) as [NSManagedObject]?
+        if let results = fetchedResults {
+            for obj in results{
+                var name: String = obj.valueForKey("object")! as NSString
+                if(name == "Car"){
+                    return obj
+                }
+            }
+        } else {
+            println("Could not fetch \(error), \(error!.userInfo)")
+        }
+        return nil
+    }
+    
     //Here I am removing the car from core data
-    func removeCarFromCoreData() {
+    public func removeCarFromCoreData() {
         var arr = [AnyObject]()
-        let entity = NSEntityDescription.entityForName("ObjectLocation", inManagedObjectContext: self.context)
+        let entity = NSEntityDescription.entityForName("ObjectLocation", inManagedObjectContext: self.managedContext)
         let fetchRequest = NSFetchRequest(entityName: "ObjectLocation")
         //let predicate = NSPredicate(format: "object == %s", "Car")
         //fetchRequest.predicate = predicate
         var error: NSError?
-        let carObject = self.context.executeFetchRequest(fetchRequest, error: &error) as [NSManagedObject]?
+        let carObject = self.managedContext.executeFetchRequest(fetchRequest, error: &error) as [NSManagedObject]?
         if let results = carObject{
             for obj in results{
                 var name: String = obj.valueForKey("object")! as NSString
                 if(name == "Car"){
-                    self.context.deleteObject(obj)
+                    self.managedContext.deleteObject(obj)
                     var err: NSError?
-                    if(!self.context.save(&err)){
+                    if(!self.managedContext.save(&err)){
                         println("Could not save \(err), \(err?.userInfo)")
                     }
                 }
@@ -111,15 +85,6 @@ class TodayViewController: UIViewController, CLLocationManagerDelegate, NCWidget
             println("Could not fetch \(error), \(error!.userInfo)")
         }
         
-    }
-    
-    func flipLocationState(){
-        self.locationState = !self.locationState
-        if(self.locationState){
-            self.saveLocation.setTitle("Remove Car location", forState: .Normal)
-        } else {
-            self.saveLocation.setTitle("Save Location", forState: .Normal)
-        }
     }
     
     // MARK: - Core Data stack
@@ -191,19 +156,5 @@ class TodayViewController: UIViewController, CLLocationManagerDelegate, NCWidget
         }
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
-        // Perform any setup necessary in order to update the view.
-
-        // If an error is encountered, use NCUpdateResult.Failed
-        // If there's no update required, use NCUpdateResult.NoData
-        // If there's an update, use NCUpdateResult.NewData
-
-        completionHandler(NCUpdateResult.NewData)
-    }
-    
 }
+
