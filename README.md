@@ -16,15 +16,16 @@ latitude  | float
 
 ## Featured to be added.
 
-* Navigation
-  - Drawing a route to your car.
-* Today Extension
-  - I think it will just be two buttons one that says find your car or save car location and another that says add location.
-* Icon
-  - I already know what I want I am just being lazy and haven't made it yet.
-* Custom pins
-  - Again I am just being lazy.
-* Custom heading view
-  - Not sure how I want these to look. I have an idea but still thinking.
+- [ ] Navigation
+  - Drawing a route from where you are to the object you are looking for.
+
+- [x] Today Widget
+  - Today widget backend is basically done. I just need to replace the remove button with a navigation button so if you have your car location set it will open the container app and take you there.
+
+- [x] Icon
+  - This may change but for now it is just a little pin.
+
+- [ ] Customer heading view
+  - Have not given much thought to how I want the annotation heading to look but These shouldn't be to difficult to design so I will probably save it for last.
 
 I am hoping to finish this bad boy and upload it to the app store over christmas berak :) 
